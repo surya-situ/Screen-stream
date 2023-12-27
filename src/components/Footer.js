@@ -13,8 +13,6 @@ const Footer = () => {
   return (
     <>
         <div className='flex justify-between mx-auto text-white w-full h-full mb-10 pr-[120px]'>
-            
-            <div>
                 {/* COMPANY DETAILS */}
                 <div>
                     <h1 className='text-xl pb-10'>Company</h1>
@@ -49,8 +47,6 @@ const Footer = () => {
                 </div>
 
             </div>
-
-        </div>
 
         {/* OTHER DETAILS OF THE COMPANY AND APP LINKS */}
         <div className='flex justify-between items-center pt-5 pb-10'>
