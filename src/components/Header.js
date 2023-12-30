@@ -1,5 +1,5 @@
-import React, {useEffect} from 'react'
 import { Link } from 'react-router-dom'
+
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
@@ -12,83 +12,64 @@ import '../styles/Header.css'
 
 const Header = () => {
 
-    useEffect(() => {
-        const sidebar = document.getElementById('sidebar');
-        const handleScroll = () => {
-          const scrollY = window.scrollY;
-    
-          if (scrollY > sidebar.offsetTop) {
-            sidebar.style.position = 'fixed';
-            sidebar.style.left = '0';
-            sidebar.style.top = '0';
-          } else {
-            sidebar.style.position = 'absolute';
-            sidebar.style.left = '0';
-            sidebar.style.top = `${sidebar.offsetTop}px`;
-          }
-        };
-    
-        window.addEventListener('scroll', handleScroll);
-    
-        return () => {
-          window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
-
   return (
-    <div id="sidebar" className='flex pt-10 h-screen w-[120px] text-white px-2 absolute'>
-        <ul className='flex flex-col items-center space-y-12 cursor-pointer'>
+    <div  className=''>
+        
+        <div>
             <li>
                 <Link to="/subscriptionPage">
-                    <img src={logo} alt='logo'/>
+                    <img className='' src={logo} alt='logo'/>
                 </Link>
             </li>
+        </div>
+
+        <ul className=''>
             <li>
                 <Link to="/userPage">
-                    <div className='relative'>
+                    <div className=''>
                         <AccountCircleOutlinedIcon />
-                        <span className='tooltip'>Account</span>
+                        <span className=''>Account</span>
                     </div>
                 </Link>
             </li>
             <li>
                 <Link to="/" title='Home'>
-                    <div className='relative'>
+                    <div className=''>
                         <HomeOutlinedIcon />
-                        <span className='tooltip'>Home</span>
+                        <span className=''>Home</span>
                     </div>
                 </Link>
             </li>
             <li>
                 <Link to="/searchPage">
-                    <div className='relative'>
+                    <div className=''>
                         <SearchOutlinedIcon />
-                        <span className='tooltip'>Search</span>
+                        <span className=''>Search</span>
                     </div>
                 </Link>
             </li>
             <li>
                 <Link to="/tvPage">
-                    <div className='relative'>
+                    <div className=''>
                         <TvOutlinedIcon />
-                        <span className='tooltip'>TV</span>
+                        <span className=''>TV</span>
                     </div>
                 </Link>
             </li>
             <li>
                 <Link to="/moviePage">
-                    <div className='relative'>
-                        <LocalMoviesOutlinedIcon />
-                        <span className='tooltip'>Movies</span>
+                    <div className=''>
+                        <LocalMoviesOutlinedIcon  className=''/>
+                        <span className=''>Movies</span>
                     </div>
                 </Link>
             </li>
             <li>
                 <Link to="/categoryPage">
                     {/* <CategoryOutlinedIcon /> */}
-                    <div className="relative">
+                    <div className="">
                         <CategoryOutlinedIcon />
-                        <span className="tooltip">Categories</span>
+                        <span className="">Categories</span>
                     </div>
                 </Link>
             </li>
