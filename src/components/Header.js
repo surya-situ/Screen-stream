@@ -54,7 +54,7 @@ const Header = () => {
                 </Link>
             </li>
 
-            <div className='space-y-12 opacity-50'>
+            <div className='space-y-12 opacity-70'>
                 {/* className='glow' is from the styles/heder.css to make the background glow on hover */}
                 <li className='glow'>
                     <Link to="/userPage">
