@@ -1,17 +1,21 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 
 import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
 import VolumeOffRoundedIcon from '@mui/icons-material/VolumeOffRounded';
 import VolumeUpRoundedIcon from '@mui/icons-material/VolumeUpRounded';
 
+import { toggleMute } from '../utils/soundSlice';
+
 const MovieDetails = ({title, releaseDate, overView, voteAverage}) => { 
 
   const roundedVoteAvg = Math.round(voteAverage);
 
-  const [mute, setMute] = useState(false)
+  const dispatch = useDispatch();
+  const isMuted = useSelector((state) => state.sound.isMuted);
 
   const handleMuteUnmute = () => {
-    setMute(!mute)
+    dispatch(toggleMute());
   };
 
   return (
@@ -63,7 +67,7 @@ const MovieDetails = ({title, releaseDate, overView, voteAverage}) => {
               onClick={handleMuteUnmute}
             >
               {
-                mute ? <VolumeUpRoundedIcon /> : <VolumeOffRoundedIcon />
+                isMuted ? <VolumeOffRoundedIcon /> : <VolumeUpRoundedIcon />
               } 
             </button>
           </div>
