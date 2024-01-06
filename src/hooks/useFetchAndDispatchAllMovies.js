@@ -19,6 +19,11 @@ const useFetchAndDispatchAllMovies = () => {
         getAllMovies()
     },[])
 
+    // Return something if needed, such as a function to manually trigger the fetch
+    return {
+        fetchAllMovies: getAllMovies,
+    };
+
 }
 
 export default useFetchAndDispatchAllMovies;
