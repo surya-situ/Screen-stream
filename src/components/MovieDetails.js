@@ -44,7 +44,7 @@ const MovieDetails = ({title, releaseDate, overView, voteAverage}) => {
         
         
         {/* overview of the movie */}
-        <p className='font-sans font-medium opacity-60 w-96 '>
+        <p className='font-sans font-normal opacity-60 w-96 '>
           {overView}
         </p>
 
