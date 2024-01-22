@@ -1,0 +1,45 @@
+/*? ---------------------------- */
+/** ---------- HEADER ---------- */
+/*? ---------------------------- */
+
+#sidebar {
+    z-index: 1000;
+}
+
+.sidebar-background {
+    display: none;
+    position: absolute;
+    background: linear-gradient(to right, rgb(0, 0, 0), rgba(0, 0, 0, 0.77),  transparent ); 
+    width: 500px;
+    height: 100vh;
+    margin: -40px;
+}
+
+.hover-glow:hover {
+    color: #fff
+}
+
+.glow:hover {
+    text-shadow: 0 0 20px rgb(255, 255, 255);
+    transform: scale(1.2);
+    transition: transform 0.2s ease-in-out; 
+    font-weight: bold;
+}
+  
+.tooltip {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: calc(100% + 8px);
+    color: #fff;
+    padding: 4px;
+}
+  
+.relative:hover .tooltip {
+    display: block;
+}
+
+.relative:hover .sidebar-background {
+    display: block;
+    transition: transform 03s ease-in-out;
+}
