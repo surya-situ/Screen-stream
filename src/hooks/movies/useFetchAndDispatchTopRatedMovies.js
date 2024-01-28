@@ -21,7 +21,7 @@ const useFetchAndDispatchTopRatedMovies = () => {
 
     useEffect(() => {
         getTopRatedMovies();
-    });
+    },[]);
 };
 
 export default useFetchAndDispatchTopRatedMovies;
