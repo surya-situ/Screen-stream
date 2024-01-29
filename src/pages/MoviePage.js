@@ -7,6 +7,15 @@ import useFetchAndDispatchAllMovies from '../hooks/movies/useFetchAndDispatchAll
 import useFetchAndDispatchPopularMovies from '../hooks/movies/useFetchAndDispatchPopularMovies'
 import useFetchAndDispatchTopRatedMovies from '../hooks/movies/useFetchAndDispatchTopRatedMovies'
 import useFetchAndDispatchUpcomingMovies from '../hooks/movies/useFetchAndDispatchUpcomingMovies'
+import { createSelector } from '@reduxjs/toolkit';
+
+const selectTopRatedMovie = createSelector(
+  state => state.movies.topRatedMovies,
+  topRatedMovies => {
+    const randomIndex = Math.floor(Math.random() * topRatedMovies.length)
+    return topRatedMovies[randomIndex] || {}
+  }
+);
 
 const MoviePage = () => {
 
@@ -16,11 +25,12 @@ const MoviePage = () => {
   useFetchAndDispatchUpcomingMovies();
 
   const movies = useSelector(store => store.movies ?? []);
+  const banner = useSelector(selectTopRatedMovie)
 
   return (
     <div className='flex flex-col'>
 
-      {/* <Banner backdropPath={backdrop_path}/> */}
+      <Banner banner={banner} />
 
       <Carousels title={"Now playing"} movies={movies.allMovies} />
       <Carousels title={"Popular movies"} movies={movies.popularMovies} />
