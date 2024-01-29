@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 // ICONS
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
@@ -13,6 +13,8 @@ import logo from '../images/logo.png'
 import './styles/Header.css'
 
 const Header = () => {
+
+    const location = useLocation();
 
     // Feature: to stick the nav to the right
     useEffect(() => {
@@ -54,18 +56,18 @@ const Header = () => {
                 </Link>
             </li>
 
-            <div className='space-y-12 opacity-70'>
+            <div className='space-y-12'>
                 {/* className='glow' is from the styles/heder.css to make the background glow on hover */}
-                <li className='glow'>
+                <li className={`glow ${location.pathname === '/userPage' ? 'opacity-100' : 'opacity-40'} hover:opacity-100`}>
                     <Link to="/userPage">
                         <div className='relative'>
                             <AccountCircleOutlinedIcon />
-                            <span className='tooltip hover-glow'>Account</span>
+                            <span className='tooltip'>Account</span>
                         </div>
                     </Link>
                 </li>
 
-                <li className='glow'>
+                <li className={`glow ${location.pathname === '/' ? 'opacity-100' : 'opacity-40'} hover:opacity-100`}>
                     <Link to="/" title='Home'>
                         <div className='relative'>
                             <HomeOutlinedIcon />
@@ -74,7 +76,7 @@ const Header = () => {
                     </Link>
                 </li>
 
-                <li className='glow'>
+                <li className={`glow ${location.pathname === '/searchPage' ? 'opacity-100' : 'opacity-40'} hover:opacity-100`}>
                     <Link to="/searchPage">
                         <div className='relative'>
                             <SearchOutlinedIcon />
@@ -83,7 +85,7 @@ const Header = () => {
                     </Link>
                 </li>
 
-                <li className='glow'>
+                <li className={`glow ${location.pathname === '/tvPage' ? 'opacity-100' : 'opacity-40'} hover:opacity-100`}>
                     <Link to="/tvPage">
                         <div className='relative'>
                             <TvOutlinedIcon />
@@ -92,7 +94,7 @@ const Header = () => {
                     </Link>
                 </li>
 
-                <li className='glow'>
+                <li className={`glow ${location.pathname === '/moviePage' ? 'opacity-100' : 'opacity-40'} hover:opacity-100`}>
                     <Link to="/moviePage">
                         <div className='relative'>
                             <LocalMoviesOutlinedIcon />
@@ -101,7 +103,7 @@ const Header = () => {
                     </Link>
                 </li>
 
-                <li className='glow'>
+                <li className={`glow ${location.pathname === '/categoryPage' ? 'opacity-100' : 'opacity-40'} hover:opacity-100`}>
                     <Link to="/categoryPage">
                         <div className="relative">
                             <CategoryOutlinedIcon />
