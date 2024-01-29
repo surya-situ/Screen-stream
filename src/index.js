@@ -14,6 +14,7 @@ import SearchPage from './pages/SearchPage';
 import TvPage from './pages/TvPage';
 import MoviePage from './pages/MoviePage';
 import CategoryPage from './pages/CategoryPage';
+import WatchPage from './pages/WatchPage';
 
 
 const appRouter = createBrowserRouter([
@@ -53,7 +54,10 @@ const appRouter = createBrowserRouter([
         path: '/loginPage',
         element: <LoginPage />
       },
-      
+      {
+        path: '/watch/:id',
+        element: <WatchPage />
+      }
     ]
   }
 ])
