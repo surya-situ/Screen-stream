@@ -28,7 +28,7 @@ const Hero = () => {
 
       {/* className='relative z-10' : It makes the movie details show upon the trailer video */}
       <div className='relative z-10'>
-        <MovieDetails title={original_title} releaseDate={release_date} overView={overview} voteAverage={vote_average} />
+        <MovieDetails title={original_title} releaseDate={release_date} overView={overview} voteAverage={vote_average} movieId={id} />
       </div>
     </div>
   )
