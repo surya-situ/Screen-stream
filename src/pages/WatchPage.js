@@ -1,12 +1,16 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 import Video from '../components/Video'
+import Carousels from '../components/template/Carousels'
+
 import useFetchAndDispatchAllMovies from '../hooks/movies/useFetchAndDispatchAllMovies';
 import useFetchAndDispatchPopularMovies from '../hooks/movies/useFetchAndDispatchPopularMovies';
 import useFetchAndDispatchTopRatedMovies from '../hooks/movies/useFetchAndDispatchTopRatedMovies'
 import useFetchAndDispatchUpcomingMovies from '../hooks/movies/useFetchAndDispatchUpcomingMovies'
+import useFetchAndDispatchSimilarMovies from '../hooks/movies/useFetchAndDispatchSimilarMovies';
+import useFetchAndDispatchRecommendedMovies from '../hooks/movies/useFetchAndDispatchRecommendedMovies';
 
 const WatchPage = () => {
 
@@ -18,11 +22,19 @@ const WatchPage = () => {
   useFetchAndDispatchTopRatedMovies();
   useFetchAndDispatchUpcomingMovies();
 
+  useFetchAndDispatchSimilarMovies({idNumber})
+  useFetchAndDispatchRecommendedMovies({idNumber})
+
   
   const allMovies = useSelector(state => state.movies?.allMovies);
   const popularMovies = useSelector(state => state.movies?.popularMovies ?? []);
   const topRatedMovies = useSelector(state => state.movies?.topRatedMovies ?? []);
   const upcomingMovies = useSelector(state => state.movies?.upcomingMovies ?? []);
+
+  const recommendedMovies = useSelector(state => state.movies?.recommendedMovies ?? []);
+  const similarMovies = useSelector(state => state.movies?.similarMovies ?? []);
+
+
   
   if(allMovies === null) return;
 
@@ -37,22 +49,36 @@ const WatchPage = () => {
   
   // Find the movie with the matching ID from the store
   const selectedMovie = allMoviesCombined.find(movie => movie.id === idNumber);
+
+  if (!selectedMovie) {
+    return( 
+      <div className='flex flex-col items-center justify-center h-screen'>
+        <h1 className='mb-8 font-bold text-red-600 text-8xl'>Oops!</h1>
+        <p className='mb-10 text-xl font-semibold tracking-wider opacity-70'>To watch premium movies, Tv shows and many more take subscription</p>
+        <Link to="/subscriptionPage">
+          <button className='px-4 py-4 text-xl font-semibold tracking-wider bg-red-800 rounded-lg opacity-70 hover:opacity-100'>Subscribe now</button>
+        </Link>
+      </div>
+    )
+  }
   
   const {id, original_title, overview} = selectedMovie
   
 
   return (
-    <div className='flex flex-col items-center justify-center h-screen pl-[150px]'>
+    <div className='flex flex-col'>
       <Video movieID={id}/>
     
-      {selectedMovie ? (
-        <div className='flex flex-col'>
-          <h3>Title: {original_title}</h3>
-          <p>Description: {overview}</p>
-        </div>
-      ) : (
-        <div>Movie not found</div>
-      )}
+      <div className='ml-[150px] my-20'>
+          <div className='flex flex-col'>
+            <h3 className='mb-8 text-6xl font-bold text-green-500'>{original_title}</h3>
+            <p className='w-1/2 text-lg tracking-wider opacity-60'>{overview}</p>
+          </div>
+      </div>
+
+      <Carousels title={"Similar movies"} movies={similarMovies}/>
+
+      <Carousels title={"Recommended movies"} movies={recommendedMovies}/>
   </div>
   )
 }
