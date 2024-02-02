@@ -11,7 +11,7 @@ const App = () => {
 
   return (
     <Provider store={appStore}>
-      <div className="p-0 m-0 text-white bg-gradient-to-b from-indigo-950 via-slate-900 to-black">
+      <div className="p-0 m-0 text-white bg-gradient-to-b from-slate-950 via-slate-950 to-black">
         <Header />
         <Outlet />
         <Footer />
