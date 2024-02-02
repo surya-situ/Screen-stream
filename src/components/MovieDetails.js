@@ -44,7 +44,7 @@ const MovieDetails = ({title, releaseDate, overView, voteAverage}) => {
         
         
         {/* overview of the movie */}
-        <p className='font-sans font-normal opacity-60 w-96 '>
+        <p className='font-sans font-normal tracking-wider opacity-60 w-96'>
           {overView}
         </p>
 
@@ -53,7 +53,7 @@ const MovieDetails = ({title, releaseDate, overView, voteAverage}) => {
           <div className='flex items-center justify-center py-2 mr-5 rounded-lg w-80' 
             style={{ backgroundColor: "rgba(209, 206, 206, 0.12)" }}
           >
-            <button className='flex items-center justify-center text-2xl font-bold text-white opacity-100'>
+            <button className='flex items-center justify-center text-2xl font-bold text-white opacity-70 hover:opacity-100'>
               <PlayArrowRoundedIcon />
               <span className='ml-4'>Watch now</span>
             </button>
