@@ -71,7 +71,7 @@ const WatchPage = () => {
     
       <div className='ml-[150px] my-20'>
           <div className='flex flex-col'>
-            <h3 className='mb-8 text-6xl font-bold text-green-500'>{original_title}</h3>
+            <h3 className='mb-8 text-6xl font-bold text-blue-500'>{original_title}</h3>
             <p className='w-1/2 text-lg tracking-wider opacity-60'>{overview}</p>
           </div>
       </div>
