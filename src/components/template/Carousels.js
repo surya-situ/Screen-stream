@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom';
 
 const Features = ({title, movies}) => {
 
+  const isFreeCategory = ['Now playing', 'Upcoming movies', 'Popular movies', 'Top Rated movies'].includes(title);
+
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
@@ -34,8 +36,7 @@ const Features = ({title, movies}) => {
     <div className='pl-[150px] my-8'>
 
       <div className='flex items-center justify-between'>
-        <h1 className='my-4 text-2xl font-medium opacity-70'> {title} </h1>
-        <span className='mr-5 text-lg font-medium opacity-50 cursor-pointer hover:opacity-100'> View all </span>
+        <h1 className='my-4 text-xl font-semibold tracking-wider opacity-70'> {title} </h1>
       </div>
 
       <Carousel
@@ -54,7 +55,11 @@ const Features = ({title, movies}) => {
         { Array.isArray(movies) &&
             movies.map((movie) => (
                 <Link to={`/watch/${movie.id}`} key={movie.id}>
-                  <Posters key={movie.id} posterPath={movie.poster_path || movie.profile_path}/>
+                  <Posters 
+                    key={movie.id} 
+                    posterPath={movie.poster_path || movie.profile_path} 
+                    isFreeCategory={isFreeCategory} 
+                    />
                 </Link>
             ))
         }
