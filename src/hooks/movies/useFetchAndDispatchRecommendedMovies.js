@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import { SCREEN_STREAM_API } from "../../utils/constants";
 
 
-import { addRecommendMovies } from "../../utils/movieSlice";
+import { addRecommendedMovies } from "../../utils/movieSlice";
 import { useEffect } from "react";
 
 const useFetchAndDispatchRecommendedMovies = ({idNumber}) => {
@@ -14,8 +14,9 @@ const useFetchAndDispatchRecommendedMovies = ({idNumber}) => {
         try {
             const fetchData = await fetch(`https://api.themoviedb.org/3/movie/${idNumber}/recommendations?language=en-US&page=1`, SCREEN_STREAM_API)
             const jsonData = await fetchData.json()
-            dispatch(addRecommendMovies(jsonData.results))
-        } catch (error) {
+            dispatch(addRecommendedMovies(jsonData.results))
+        }
+        catch(error) {
             console.log('Error in fetching', error);
         }
     };
