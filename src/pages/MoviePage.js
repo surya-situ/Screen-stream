@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { createSelector } from '@reduxjs/toolkit';
 
 import Carousels from '../components/template/Carousels';
 import Banner from '../components/template/Banner';
@@ -7,7 +8,7 @@ import useFetchAndDispatchAllMovies from '../hooks/movies/useFetchAndDispatchAll
 import useFetchAndDispatchPopularMovies from '../hooks/movies/useFetchAndDispatchPopularMovies'
 import useFetchAndDispatchTopRatedMovies from '../hooks/movies/useFetchAndDispatchTopRatedMovies'
 import useFetchAndDispatchUpcomingMovies from '../hooks/movies/useFetchAndDispatchUpcomingMovies'
-import { createSelector } from '@reduxjs/toolkit';
+import useFetchAndDispatchTrendingMovies from '../hooks/movies/useFetchAndDispatchTrendingMovies';
 
 const selectTopRatedMovie = createSelector(
   state => state.movies.topRatedMovies,
@@ -23,6 +24,7 @@ const MoviePage = () => {
   useFetchAndDispatchPopularMovies();
   useFetchAndDispatchTopRatedMovies();
   useFetchAndDispatchUpcomingMovies();
+  useFetchAndDispatchTrendingMovies();
 
   const movies = useSelector(store => store.movies ?? []);
   const banner = useSelector(selectTopRatedMovie)
@@ -34,8 +36,9 @@ const MoviePage = () => {
 
       <Carousels title={"Now playing"} movies={movies.allMovies} />
       <Carousels title={"Popular movies"} movies={movies.popularMovies} />
-      <Carousels title={"Top Rated "} movies={movies.topRatedMovies} />
-      <Carousels title={"Upcoming Movies"} movies={movies.upcomingMovies} />
+      <Carousels title={"Top Rated movies"} movies={movies.topRatedMovies} />
+      <Carousels title={"Upcoming movies"} movies={movies.upcomingMovies} />
+      <Carousels title={"Trending movies"} movies={movies.trendingMovies} />
     </div>
   )
 }
