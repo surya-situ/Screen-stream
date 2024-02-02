@@ -1,5 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
 import VolumeOffRoundedIcon from '@mui/icons-material/VolumeOffRounded';
@@ -7,7 +8,7 @@ import VolumeUpRoundedIcon from '@mui/icons-material/VolumeUpRounded';
 
 import { toggleMute } from '../utils/soundSlice';
 
-const MovieDetails = ({title, releaseDate, overView, voteAverage}) => { 
+const MovieDetails = ({title, releaseDate, overView, voteAverage, movieId}) => { 
 
   const roundedVoteAvg = Math.round(voteAverage);
 
@@ -53,10 +54,12 @@ const MovieDetails = ({title, releaseDate, overView, voteAverage}) => {
           <div className='flex items-center justify-center py-2 mr-5 rounded-lg w-80' 
             style={{ backgroundColor: "rgba(209, 206, 206, 0.12)" }}
           >
-            <button className='flex items-center justify-center text-2xl font-bold text-white opacity-70 hover:opacity-100'>
-              <PlayArrowRoundedIcon />
-              <span className='ml-4'>Watch now</span>
-            </button>
+            <Link to={`/watch/${movieId}`}>
+              <button className='flex items-center justify-center text-2xl font-bold text-white opacity-70 hover:opacity-100'>
+                <PlayArrowRoundedIcon />
+                <span className='ml-4'>Watch now</span>
+              </button>
+            </Link>
           </div>
 
           {/* mute and unmute option */}
