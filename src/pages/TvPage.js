@@ -8,6 +8,7 @@ import useFetchAndDispatchAiringTodayTv from '../hooks/televison/useFetchAndDisp
 import useFetchAndDispatchOnTheAirTv from '../hooks/televison/useFetchAndDispatchOnTheAirTv'
 import useFetchAndDispatchPopularTv from '../hooks/televison/useFetchAndDispatchPopularTv'
 import useFetchAndDispatchTopRatedTv from '../hooks/televison/useFetchAndDispatchTopRatedTv'
+import useFetchAndDispatchTrendingTv from '../hooks/televison/useFetchAndDispatchTrendingTv'
 
 const selectedTopRatedTv = createSelector(
   state => state.tv.topRatedTv,
@@ -23,6 +24,7 @@ const TvPage = () => {
   useFetchAndDispatchOnTheAirTv();
   useFetchAndDispatchPopularTv();
   useFetchAndDispatchTopRatedTv();
+  useFetchAndDispatchTrendingTv();
 
   const tv = useSelector(store => store.tv ?? []);
 
@@ -38,6 +40,7 @@ const TvPage = () => {
       <Carousels title={"Airing Today shows"} movies={tv.airingToday} />
       <Carousels title={"Top rated shows"} movies={tv.topRatedTv} />
       <Carousels title={"on the air shows"} movies={tv.onTheAirTv} />
+      <Carousels title={"trending shows"} movies={tv.trendingShows} />
     </div>
   )
 }
