@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import useFetchAndDispatchMovieTrailer from '../hooks/useFetchAndDispatchTrailer';
+import useFetchAndDispatchMovieTrailer from '../hooks/movies/useFetchAndDispatchTrailer';
 
 const Trailer = ({movieID}) => {
 

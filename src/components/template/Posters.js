@@ -8,7 +8,7 @@ const Posters = ({posterPath}) => {
         <img 
             src={`${IMG_CDN}${posterPath}`} 
             alt="poster" 
-            className='transition-transform duration-300 cursor-pointer w-44 h-60 hover:scale-150'
+            className='transition-transform duration-300 ease-out rounded-lg cursor-pointer w-44 h-60 hover:scale-110'
         />
     </div>
   )

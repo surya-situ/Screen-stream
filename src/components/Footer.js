@@ -12,7 +12,7 @@ const Footer = () => {
 
   return (
     <>
-        <div className='flex justify-between w-full h-full mx-auto mb-10 text-white pr-[120px] pl-[150px]'>
+        <div className='flex justify-between w-full h-full mx-auto mb-30 mt-44 text-white pr-[120px] pl-[150px]'>
         
                 {/* COMPANY DETAILS */}
                 <div>

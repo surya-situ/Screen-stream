@@ -13,15 +13,21 @@ const Features = () => {
 
       <Carousels title={"Now playing"} movies={movies.allMovies} />
       <Carousels title={"Popular movies"} movies={movies.popularMovies} />
-      <Carousels title={"Top Rated "} movies={movies.topRatedMovies} />
-      <Carousels title={"Upcoming Movies"} movies={movies.upcomingMovies} />
 
-      <Carousels title={"Airing Today Tv"} movies={tv.airingToday} />
-      <Carousels title={"Top rated Tv"} movies={tv.topRatedTv} />
-      <Carousels title={"on the air Tv"} movies={tv.onTheAirTv} />
-      <Carousels title={"Popular Tv"} movies={tv.popularTv} />
+      <Carousels title={"Top rated shows"} movies={tv.topRatedTv} />
 
-      <Carousels title={"Popular persons"} movies={people.popularPeople} />
+      <Carousels title={"Top Rated movies"} movies={movies.topRatedMovies} />
+      <Carousels title={"Upcoming movies"} movies={movies.upcomingMovies} />
+
+      <Carousels title={"Popular shows"} movies={tv.popularTv} />
+      <Carousels title={"On the air shows"} movies={tv.onTheAirTv} />
+
+      <Carousels title={"Today trending movies"} movies={movies.trendingMovies} />
+
+      <Carousels title={"Airing Today  shows"} movies={tv.airingToday} />
+      <Carousels title={"Today trending shows"} movies={tv.trendingShows} />
+
+      <Carousels title={"Popular figures"} movies={people.popularPeople} />
       
     </div>
   );

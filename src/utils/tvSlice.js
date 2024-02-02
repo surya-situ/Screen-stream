@@ -6,7 +6,9 @@ const tvSlice = createSlice({
         airingToday: [],
         onTheAirTv: [],
         popularTv: [],
-        topRatedTv: []
+        topRatedTv: [],
+        tvVideo: [],
+        trendingShows: []
     },
     reducers: {
         addAiringToday: (state,action) => {
@@ -20,9 +22,15 @@ const tvSlice = createSlice({
         },
         addTopRatedTv: (state, action) => {
             state.topRatedTv = action.payload
+        },
+        addTvVideo: (state, action) => {
+            state.tvVideo = action.payload
+        },
+        addTrendingShows: (state, action) => {
+            state.trendingShows = action.payload
         }
     }
 });
 
-export const {addAiringToday, addOnTheAirTv, addPopularTv, addTopRatedTv} = tvSlice.actions;
+export const {addAiringToday, addOnTheAirTv, addPopularTv, addTopRatedTv, addTvVideo, addTrendingShows} = tvSlice.actions;
 export default tvSlice.reducer;
