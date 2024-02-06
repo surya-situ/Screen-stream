@@ -10,11 +10,11 @@ import useFetchAndDispatchTopRatedMovies from '../hooks/movies/useFetchAndDispat
 import useFetchAndDispatchUpcomingMovies from '../hooks/movies/useFetchAndDispatchUpcomingMovies'
 import useFetchAndDispatchTrendingMovies from '../hooks/movies/useFetchAndDispatchTrendingMovies';
 
-const selectTopRatedMovie = createSelector(
-  state => state.movies.topRatedMovies,
-  topRatedMovies => {
-    const randomIndex = Math.floor(Math.random() * topRatedMovies.length)
-    return topRatedMovies[randomIndex] || {}
+const selectUpcomingMovies = createSelector(
+  state => state.movies.upcomingMovies,
+  upcomingMovies => {
+    const randomIndex = Math.floor(Math.random() * upcomingMovies.length)
+    return upcomingMovies[randomIndex] || {}
   }
 );
 
@@ -27,7 +27,7 @@ const MoviePage = () => {
   useFetchAndDispatchTrendingMovies();
 
   const movies = useSelector(store => store.movies ?? []);
-  const banner = useSelector(selectTopRatedMovie)
+  const banner = useSelector(selectUpcomingMovies)
 
   return (
     <div className='flex flex-col'>
