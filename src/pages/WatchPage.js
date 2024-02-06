@@ -56,7 +56,7 @@ const WatchPage = () => {
         <h1 className='mb-8 font-bold text-red-600 text-8xl'>Oops!</h1>
         <p className='mb-10 text-xl font-semibold tracking-wider opacity-70'>To watch premium movies, Tv shows and many more take subscription</p>
         <Link to="/subscriptionPage">
-          <button className='px-4 py-4 text-xl font-semibold tracking-wider bg-red-800 rounded-lg opacity-70 hover:opacity-100'>Subscribe now</button>
+          <button className='px-10 py-3 text-xl font-semibold tracking-wider transition duration-500 transform rounded-lg bg-gradient-to-tr from-blue-600 via-blue-700 to-blue-950 hover:scale-105'>Subscribe now</button>
         </Link>
       </div>
     )
