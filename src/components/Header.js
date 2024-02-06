@@ -7,7 +7,6 @@ import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import TvOutlinedIcon from '@mui/icons-material/TvOutlined';
 import LocalMoviesOutlinedIcon from '@mui/icons-material/LocalMoviesOutlined';
-import CategoryOutlinedIcon from '@mui/icons-material/CategoryOutlined';
 
 import logo from '../images/logo.png'
 import './styles/Header.css'
@@ -41,7 +40,7 @@ const Header = () => {
     }, []);
 
   return (
-    <div id="sidebar" className='h-screen flex pt-10 w-[120px] text-white px-2 relative'>
+    <div id="sidebar" className='h-screen flex items-center w-[120px] text-white px-2 relative'>
 
         {/* Makes a background when hover on the nav bar */}
         <div className='sidebar-background'></div>
@@ -56,7 +55,7 @@ const Header = () => {
                 </Link>
             </li>
 
-            <div className='space-y-12'>
+            <div className='pt-6 space-y-14'>
                 {/* className='glow' is from the styles/heder.css to make the background glow on hover */}
                 <li className={`glow ${location.pathname === '/userPage' ? 'opacity-100' : 'opacity-40'} hover:opacity-100`}>
                     <Link to="/userPage">
@@ -102,15 +101,7 @@ const Header = () => {
                         </div>
                     </Link>
                 </li>
-
-                <li className={`glow ${location.pathname === '/categoryPage' ? 'opacity-100' : 'opacity-40'} hover:opacity-100`}>
-                    <Link to="/categoryPage">
-                        <div className="relative">
-                            <CategoryOutlinedIcon />
-                            <span className="tooltip">Categories</span>
-                        </div>
-                    </Link>
-                </li>
+                
             </div>
         </ul>
 
