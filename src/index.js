@@ -13,7 +13,6 @@ import LoginPage from './pages/LoginPage';
 import SearchPage from './pages/SearchPage';
 import TvPage from './pages/TvPage';
 import MoviePage from './pages/MoviePage';
-import CategoryPage from './pages/CategoryPage';
 import WatchPage from './pages/WatchPage';
 
 
@@ -45,10 +44,6 @@ const appRouter = createBrowserRouter([
       {
         path: '/moviePage',
         element: <MoviePage />
-      },
-      {
-        path: '/categoryPage',
-        element: <CategoryPage />
       },
       {
         path: '/loginPage',
