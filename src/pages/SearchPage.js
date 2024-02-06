@@ -42,7 +42,7 @@ const SearchPage = () => {
       <div className="flex flex-wrap justify-center mt-8">
         {
           searchItems.filter((movie) => movie.backdrop_path).map((Movie) => (
-            <div key={Movie.id} className='relative mx-6 my-6 hover:scale-125'>
+            <div key={Movie.id} className='relative mx-6 my-6 transition-transform duration-300 hover:scale-125'>
               <Link to={`/watch/${Movie.id}`}>
               <img 
                 className='w-[360px] rounded-lg overflow-hidden cursor-pointer' 
