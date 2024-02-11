@@ -54,7 +54,7 @@ const WatchPage = () => {
     return( 
       <div className='flex flex-col items-center justify-center h-screen'>
         <h1 className='mb-8 font-bold text-red-600 text-8xl'>Oops!</h1>
-        <p className='mb-10 text-xl font-semibold tracking-wider opacity-70'>To watch premium movies, Tv shows and many more take subscription</p>
+        <p className='mb-10 text-xl font-semibold tracking-wider opacity-70 max-[600px]:pl-4'>To watch premium movies, Tv shows and many more take subscription</p>
         <Link to="/subscriptionPage">
           <button className='px-10 py-3 text-xl font-semibold tracking-wider transition duration-500 transform rounded-lg bg-gradient-to-tr from-blue-600 via-blue-700 to-blue-950 hover:scale-105'>Subscribe now</button>
         </Link>
@@ -69,10 +69,10 @@ const WatchPage = () => {
     <div className='flex flex-col'>
       <Video movieID={id}/>
     
-      <div className='ml-[150px] my-20'>
+      <div className='ml-[150px] my-20 max-[600px]:m-4 max-[600px]:my-16'>
           <div className='flex flex-col'>
-            <h3 className='mb-8 text-6xl font-bold text-blue-500'>{original_title}</h3>
-            <p className='w-1/2 text-lg tracking-wider opacity-60'>{overview}</p>
+            <h3 className='mb-8 text-6xl font-bold text-blue-500 max-[600px]:text-3xl'>{original_title}</h3>
+            <p className='w-1/2 text-lg tracking-wider opacity-60 max-[600px]:w-full max-[600px]:pr-2'>{overview}</p>
           </div>
       </div>
 
