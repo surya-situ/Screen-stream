@@ -33,7 +33,7 @@ const Features = ({title, movies}) => {
   };
 
   return (
-    <div className='pl-[150px] my-8'>
+    <div className='pl-[150px] my-8 max-[600px]:pl-4'>
 
       <div className='flex items-center justify-between'>
         <h1 className='my-4 text-xl font-semibold tracking-wider opacity-70'> {title} </h1>
