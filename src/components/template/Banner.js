@@ -6,15 +6,15 @@ import { Link } from 'react-router-dom';
 const Banner = ({banner}) => {
 
     return (
-      <div className='pl-[150px] pr-[50px] mt-10'>
-        <div className='flex flex-row bg-gray-900 rounded-xl'>
+      <div className='pl-[150px] pr-[50px] mt-10 max-[600px]:pl-4 max-[600px]:pr-4'>
+        <div className='flex flex-row bg-gray-900 rounded-xl max-[600px]:flex-col'>
           <img 
               src={`${IMG_CDN}${banner.backdrop_path}`} 
               alt="banner"
-              className='h-full rounded-s-xl' 
+              className='h-full rounded-s-xl max-[600px]:rounded-lg' 
           />
 
-          <div className='relative flex flex-col w-full my-12 ml-20'>
+          <div className='relative flex flex-col w-full gap-4 my-12 ml-20 max-[600px]:m-4'>
 
             <div className='flex flex-row items-center mb-4'>
 
@@ -23,10 +23,10 @@ const Banner = ({banner}) => {
                 <span className='text-blue-500'>special</span>
               </div>
 
-              <h1 className='ml-4 text-4xl font-semibold'>{banner.title || banner.original_name}</h1>
+              <h1 className='ml-4 text-4xl font-semibold max-[600px]:text-xl'>{banner.title || banner.original_name}</h1>
             </div>
 
-            <p className='tracking-wider font-semi-bold'>
+            <p className='tracking-wider font-semi-bold max-[600px]:mb-16 max-[600px]:p-2'>
               Watch the {banner.title || banner.original_name} on screen-stream before it premieres anywhere else.
             </p>
 
