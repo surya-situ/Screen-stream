@@ -12,11 +12,11 @@ const Footer = () => {
 
   return (
     <>
-        <div className='flex justify-between w-full h-full mx-auto mb-30 mt-44 text-white pr-[120px] pl-[150px]'>
+        <div className='flex justify-between w-full h-full mx-auto mb-30 mt-44 text-white pr-[120px] pl-[150px] max-[600px]:flex-col  max-[600px]:pl-4'>
         
                 {/* COMPANY DETAILS */}
-                <div>
-                    <h1 className='pb-10 text-xl'>Company</h1>
+                <div className='max-[600px]:mb-6'>
+                    <h1 className='pb-10 text-xl max-[600px]:pb-3'>Company</h1>
                     <div className='opacity-50 '>
                         <p className='mb-3 cursor-pointer'>About Us</p>
                         <p className='cursor-pointer'>Careers</p>
@@ -24,14 +24,14 @@ const Footer = () => {
                 </div>
                 
                 {/* LANGUAGE */}
-                <div>
-                    <h1 className='pb-10 text-xl'>View website in</h1>
+                <div className='max-[600px]:mb-6'>
+                    <h1 className='pb-10 text-xl max-[600px]:pb-3'>View website in</h1>
                     <p className='opacity-50 '> <CheckOutlinedIcon /> English</p>
                 </div>
 
                 {/* HELP */}
-                <div>
-                    <h1 className='pb-10 text-xl'>Need Help ?</h1>
+                <div className='max-[600px]:mb-6'>
+                    <h1 className='pb-10 text-xl max-[600px]:pb-3'>Need Help ?</h1>
                     <div className='opacity-50 cursor-pointer'>
                         <p className='mb-3'>Visit Help Center</p>
                         <p>Share Feedback</p>
@@ -39,8 +39,8 @@ const Footer = () => {
                 </div>
 
                 {/* CONTACTS */}
-                <div>
-                    <h1 className='pb-10 text-xl'>Contact us</h1>
+                <div className='max-[600px]:mb-6'>
+                    <h1 className='pb-10 text-xl max-[600px]:pb-3'>Contact us</h1>
                     <div className='flex flex-row gap-10 opacity-50 cursor-pointer'>
                         <p> <FacebookOutlinedIcon/> </p>
                         <p> <LocalPhoneOutlinedIcon /> </p>
@@ -50,11 +50,11 @@ const Footer = () => {
             </div>
 
         {/* OTHER DETAILS OF THE COMPANY AND APP LINKS */}
-        <div className='flex items-center justify-between pt-5 pb-10 pr-[120px] pl-[150px]'>
+        <div className='flex items-center justify-between pt-5 pb-10 pr-[120px] pl-[150px] max-[600px]:flex-col max-[600px]:pl-4 max-[600px]:items-start'>
 
             <div className='opacity-50'>
                 <h1> &copy; {currentYear} SCREEN. All rights reserves.</h1>
-                <div className='flex flex-row gap-4 cursor-pointer'>
+                <div className='flex flex-row gap-4 cursor-pointer max-[600px]:flex-col max-[600px]:mb-6'>
                     <p>Terms of use</p>
                     <p>F&Q</p>
                     <p>Privacy policy</p>
@@ -62,7 +62,7 @@ const Footer = () => {
             </div>
 
             <div className='flex opacity-50'>
-                <div className='flex flex-row cursor-pointer'>
+                <div className='flex flex-row cursor-pointer max-[600px]:flex-col'>
                     <img src={androidStore} alt="playstore" className='w-[120px]'/>
                     <img src={appleStore} alt="apple store" className='w-[120px]'/>
                 </div>
