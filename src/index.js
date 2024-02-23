@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Suspense} from 'react';
 import ReactDOM from 'react-dom/client';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
@@ -6,14 +6,15 @@ import reportWebVitals from './reportWebVitals';
 
 import './index.css';
 import App from './App';
-import HomePage from './pages/HomePage';
-import UserPage from './pages/UserPage';
-import SubscriptionPage from './pages/SubscriptionPage';
-import LoginPage from './pages/LoginPage';
-import SearchPage from './pages/SearchPage';
-import TvPage from './pages/TvPage';
-import MoviePage from './pages/MoviePage';
-import WatchPage from './pages/WatchPage';
+
+const HomePage = React.lazy(() => import('./pages/HomePage'))
+const UserPage = React.lazy(() => import('./pages/UserPage'));
+const SubscriptionPage = React.lazy(() => import('./pages/SubscriptionPage'));
+const LoginPage = React.lazy(() => import('./pages/LoginPage'));
+const SearchPage = React.lazy(() => import('./pages/SearchPage'));
+const TvPage = React.lazy(() => import('./pages/TvPage'));
+const MoviePage = React.lazy(() => import('./pages/MoviePage'));
+const WatchPage = React.lazy(() => import('./pages/WatchPage'));
 
 
 const appRouter = createBrowserRouter([
@@ -59,6 +60,10 @@ const appRouter = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <RouterProvider router={appRouter} />
+  <>
+    <Suspense fallback={<div>loading.....</div>} >
+      <RouterProvider router={appRouter} />
+    </Suspense>
+  </>
 );
 reportWebVitals();
