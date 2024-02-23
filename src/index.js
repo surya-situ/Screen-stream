@@ -61,7 +61,7 @@ const appRouter = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
-    <Suspense fallback={<div>loading.....</div>} >
+    <Suspense fallback={<div className='flex items-center justify-center h-screen text-2xl font-bold text-white bg-gradient-to-b from-slate-950 via-slate-950 to-black'>loading.....</div>} >
       <RouterProvider router={appRouter} />
     </Suspense>
   </>
