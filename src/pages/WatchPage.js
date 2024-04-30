@@ -69,10 +69,10 @@ const WatchPage = () => {
     <div className='flex flex-col'>
       <Video movieID={id}/>
     
-      <div className='ml-[150px] my-20 max-[600px]:m-4 max-[600px]:my-16'>
+      <div className='ml-[150px]'>
           <div className='flex flex-col'>
-            <h3 className='mb-8 text-6xl font-bold text-blue-500 max-[600px]:text-3xl'>{original_title}</h3>
-            <p className='w-1/2 text-lg tracking-wider opacity-60 max-[600px]:w-full max-[600px]:pr-2'>{overview}</p>
+            <h3 className='mb-8 text-6xl font-bold text-blue-500 '>{original_title}</h3>
+            <p className='w-1/2 text-lg tracking-wider opacity-60 '>{overview}</p>
           </div>
       </div>
 
