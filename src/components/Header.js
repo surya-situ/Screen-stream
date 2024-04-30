@@ -18,19 +18,23 @@ const Header = () => {
     // Feature: to stick the nav to the right
     useEffect(() => {
         const sidebar = document.getElementById('sidebar');
-        const handleScroll = () => {
-          const scrollY = window.scrollY;
 
-          if (scrollY > sidebar.offsetTop) {
-            sidebar.style.position = 'fixed';
-            sidebar.style.left = '0';
-            sidebar.style.top = '0';
-          } else {
-            sidebar.style.position = 'absolute';
-            sidebar.style.left = '0';
-            sidebar.style.top = `${sidebar.offsetTop}px`;
-          }
+        const handleScroll = () => {
+            const scrollY = window.scrollY;
+        
+            if (scrollY > sidebar.offsetTop) {
+                sidebar.style.position = 'fixed';
+                sidebar.style.left = '0';
+                sidebar.style.top = '0';
+                sidebar.style.transition = 'transform 5s ease-in-out';
+            } else {
+                sidebar.style.position = 'absolute';
+                sidebar.style.left = '0';
+                sidebar.style.top = `${sidebar.offsetTop}px`;
+                sidebar.style.transition = 'none'; 
+            }
         };
+        
 
         window.addEventListener('scroll', handleScroll);
 
@@ -40,7 +44,7 @@ const Header = () => {
     }, []);
 
   return (
-    <div id="sidebar" className='h-screen flex items-center w-[120px] text-white px-2 relative'>
+    <nav id="sidebar" className='h-screen flex items-center w-[120px] text-white px-1 relative'>
 
         {/* Makes a background when hover on the nav bar */}
         <div className='sidebar-background'></div>
@@ -50,7 +54,7 @@ const Header = () => {
             <li>
                 <Link to="/subscriptionPage">
                     <div className='relative'>
-                        <img src={logo} alt='logo'/>
+                        <img src={logo} alt='logo' className='rounded-md '/>
                     </div>
                 </Link>
             </li>
@@ -105,7 +109,7 @@ const Header = () => {
             </div>
         </ul>
 
-    </div>
+    </nav>
   )
 }
 
