@@ -13,12 +13,14 @@
     width: 500px;
     height: 100vh;
     margin: -40px;
+    transition: opacity 5s ease-in-out
 }
+
 
 .glow:hover {
     text-shadow: 0 0 20px rgb(255, 255, 255);
-    transform: scale(1.2);
-    transition: transform 0.2s ease-in-out; 
+    transform: scale(1.5);
+    transition: transform 5s ease-in-out; 
     font-weight: bold;
 }
   
@@ -37,5 +39,4 @@
 
 .relative:hover .sidebar-background {
     display: block;
-    transition: transform 03s ease-in-out;
 }
